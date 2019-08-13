@@ -1,0 +1,365 @@
+@font-face {
+  font-family: Silkspace;
+  src: url("../fonts/silkscreen/slkscr.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("../fonts/Roboto_Mono/RobotoMono-Light.ttf");
+}
+@font-face {
+  font-family: "PressStart";
+  src: url("../fonts/Press_Start_2P/PressStart2P-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto_Mono/RobotoMono-Bold.ttf");
+}
+@keyframes actorIdle {
+  from {
+    background-position-x: -210px;
+    background-position-y: 266px;
+  }
+  to {
+    background-position-x: -274px;
+    background-position-y: 266px;
+  }
+}
+@keyframes crewOne {
+  from {
+    background-position-x: -210px;
+    background-position-y: 458px;
+  }
+  to {
+    background-position-x: -274px;
+    background-position-y: 458px;
+  }
+}
+@keyframes crewTwo {
+  from {
+    background-position-x: -210px;
+    background-position-y: 490px;
+  }
+  to {
+    background-position-x: -274px;
+    background-position-y: 490px;
+  }
+}
+@keyframes moveOne {
+  from {
+    background-position-x: -290px;
+    background-position-y: 458px;
+  }
+  to {
+    background-position-x: -418px;
+    background-position-y: 458px;
+  }
+}
+@keyframes moveTwo {
+  from {
+    background-position-x: -290px;
+    background-position-y: 490px;
+  }
+  to {
+    background-position-x: -418px;
+    background-position-y: 490px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: "Roboto Mono";
+}
+
+body {
+  background: url("../images/sources/bg-pattern.png");
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.error-holder {
+  padding: 0;
+  margin-bottom: 0.3em;
+  color: #FF0000;
+  display: none;
+  text-align: center;
+}
+
+.instructions-title {
+  text-align: center;
+}
+
+.success-holder {
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0.3em;
+  color: #00FF00;
+  display: none;
+}
+
+.centered {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+
+input[type=text], input[type=password] {
+  padding: 0.5em;
+  font-size: 22px;
+  color: #ffffff;
+  margin-right: 0.5em;
+  background: #333333;
+  outline: none;
+  border: none;
+}
+
+.wrong {
+  color: #FF0000;
+}
+
+.right {
+  border: 2px solid #00FF00;
+}
+
+button {
+  padding: 0.5em;
+  font-size: 22px;
+  color: #ffffff;
+  background: #dca12a;
+  border: none;
+  font-family: "Roboto Bold";
+}
+
+button:hover {
+  color: #dca12a;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  background: #9f731a;
+  cursor: default;
+}
+
+button:disabled:hover {
+  color: #ffffff;
+  background: #9f731a;
+}
+
+h1 {
+  font-family: "PressStart";
+}
+
+#level-name {
+  text-transform: uppercase;
+  color: #FFF;
+  margin: 0 auto;
+  width: 995px;
+  height: 93px;
+  text-align: center;
+  font-size: 28px;
+  padding-top: 0.8em;
+  font-family: "PressStart";
+  background: url("../images/banner.png") no-repeat;
+  user-select: none;
+}
+#level-name .player-name {
+  font-family: inherit;
+}
+
+p {
+  padding: 1em;
+  font-size: 21px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.instructions-p-holder {
+  display: none;
+}
+
+#blur {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1600px;
+  filter: blur(5px);
+  opacity: 0.8;
+  z-index: 99;
+  background: #333333;
+}
+
+#level-instructions {
+  z-index: 100;
+  width: 90%;
+  display: none;
+}
+#level-instructions .encrypted-text {
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+#level-instructions button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+.modal-screen {
+  background: #282828;
+  padding: 1em;
+}
+
+#game {
+  padding: 1em;
+  width: 95%;
+  margin: 0 auto;
+}
+#game #play-area {
+  width: 100%;
+}
+#game #play-area #header {
+  text-decoration: none;
+  padding: 1em 0;
+  display: grid;
+  place-content: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6% 94%;
+  grid-column-gap: 0;
+}
+#game #play-area #header h1 {
+  margin-top: 10px;
+  float: left;
+}
+#game #play-area #main-area {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #303030;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  display: none;
+}
+#game #play-area #main-area .tasks-holder {
+  margin: 0 auto;
+  width: 50%;
+}
+#game #play-area #main-area .tasks-holder p {
+  text-align: right;
+}
+#game #play-area #main-area .tasks-holder .task {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 1em;
+}
+#game #play-area #main-area .tasks-holder input[type=text] {
+  width: 80%;
+  padding: 0.4em;
+  font-size: 20px;
+}
+#game #play-area #main-area .instructions-p {
+  margin-top: 0.5em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#game #play-area #main-area .instructions-p:hover {
+  color: gray;
+}
+#game #play-area #main-area .encrypted-text {
+  letter-spacing: 0.3em;
+}
+#game #play-area #main-area .alphabet {
+  margin: 1em auto;
+}
+#game #play-area #main-area .alphabet td {
+  border: 1px solid #FFF;
+  font-size: 25px;
+  padding: 0.3em;
+}
+#game #play-area #main-area .alphabet td input[type=text] {
+  width: 1em;
+}
+#game #play-area #main-area .actors-holder {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+}
+#game #play-area #main-area .actor {
+  width: 16px;
+  height: 32px;
+  background: url("../images/tileset.png");
+  position: relative;
+  margin-top: 5em;
+  margin-bottom: 3em;
+  left: 50%;
+  transform: scale(5, 5);
+}
+#game #play-area #main-area .main-actor {
+  animation: actorIdle 0.5s steps(4) infinite;
+}
+#game #play-area #main-area .crew-one-actor {
+  width: 14px;
+  animation: crewOne 0.5s steps(4) infinite;
+}
+#game #play-area #main-area .crew-two-actor {
+  animation: crewTwo 0.5s steps(4) infinite;
+}
+#game #play-area #main-area .success-holder-area {
+  display: none;
+}
+#game #play-area #main-area .start-game-block, #game #play-area #main-area .password-holder-area, #game #play-area #main-area .success-holder-area,
+#game #play-area #main-area .check-area {
+  width: 100%;
+  text-align: center;
+  margin: 2em;
+}
+#game #play-area #robots-area {
+  display: none;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+#game #play-area #robots-area #robots-background {
+  margin: 0 auto;
+  width: 1478px;
+  height: 302px;
+  background: url("../images/ship/ship-01.png") no-repeat;
+}
+#game #play-area #robots-area .crew {
+  background: url("../images/tileset.png");
+  width: 16px;
+  height: 32px;
+  transform: scale(2, 2);
+  position: relative;
+}
+#game #play-area #robots-area .crew-1 {
+  width: 14px;
+  top: 65%;
+  left: 8%;
+  animation: crewOne 0.5s steps(4) infinite;
+}
+#game #play-area #robots-area .crew-2 {
+  left: 12%;
+  top: 55%;
+  animation: crewTwo 0.5s steps(4) infinite;
+}
+
+footer {
+  background: #131313;
+  text-align: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  color: #303030;
+}
+
+/*# sourceMappingURL=style.css.map */

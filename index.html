@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/comp-1.png">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="preload" as="image" href="images/ship/ship-01.png">
+	<link rel="preload" as="image" href="images/ship/ship-02.png">
+	<link rel="preload" as="image" href="images/ship/ship-03.png">
+	<link rel="preload" as="image" href="images/ship/ship-04.png">
+	<link rel="preload" as="image" href="images/ship/ship-05.png">
+	<link rel="preload" as="image" href="images/ship/ship-06.png">
+
+
+	<title>Computer Quest - Learn Informatics by Playing the Game</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main id="game">
+		<div id="play-area">
+			<a href="index.html" id="header">
+				<img src="images/comp-1.png" alt="Computer" />
+				<h1>Computer Quest</h1>
+			</a>
+			<div id="robots-area">
+					<div id="robots-background">
+						<div class="crew crew-1"></div>
+						<div class="crew crew-2"></div>
+					</div>
+			</div>
+			<div id="main-area">
+				<div id="level-name"></div>
+				<div id="level-description">
+				</div>
+				<div class="instructions-p-holder">
+					<p class="instructions-p" style="text-align: center">Инструкции по выполнению</p>
+				</div>
+				<div id="blur"></div>
+				<div id="level-instructions" class="centered modal-screen"></div>
+			</div>
+		</div>
+	</main>
+	<footer>Kalistratov Maxim &copy; ComputerQuest 2019</footer>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/game.js" type="module"></script>
+</body>
+</html>

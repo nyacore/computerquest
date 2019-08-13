@@ -1,0 +1,53 @@
+
+@keyframes actorIdle {
+	from {
+		background-position-x: -210px;
+		background-position-y: 266px;
+	}
+	to {
+		background-position-x: -274px;
+		background-position-y: 266px;
+	}
+}
+
+@keyframes crewOne {
+	from {
+		background-position-x: -210px;
+		background-position-y: 458px;
+	}
+	to {
+		background-position-x: -274px;
+		background-position-y: 458px;
+	}
+}
+
+@keyframes crewTwo {
+	from {
+		background-position-x: -210px;
+		background-position-y: 490px;
+	}
+	to {
+		background-position-x: -274px;
+		background-position-y: 490px;
+	}
+}
+
+@keyframes moveOne {
+	from {
+		background-position-x: -290px;
+		background-position-y: 458px;
+	} to {
+		background-position-x: -418px;
+		background-position-y: 458px;
+	}
+}
+
+@keyframes moveTwo {
+	from {
+		background-position-x: -290px;
+		background-position-y: 490px;
+	} to {
+		background-position-x: -418px;
+		background-position-y: 490px;
+	}
+}
